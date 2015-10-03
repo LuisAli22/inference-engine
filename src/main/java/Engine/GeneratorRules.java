@@ -1,6 +1,6 @@
 package Engine;
 
-import static Engine.Consts.*;
+import static Utils.Consts.*;
 
 public class GeneratorRules {
 	private KnowledgeBase base;

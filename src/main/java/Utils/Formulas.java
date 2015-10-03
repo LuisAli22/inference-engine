@@ -1,6 +1,8 @@
-package Engine;
+package Utils;
 
-import static Engine.Consts.*;
+import Engine.KnowledgeBase;
+
+import static Utils.Consts.*;
 
 public class Formulas {
 	

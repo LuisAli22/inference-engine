@@ -1,6 +1,9 @@
-package Engine;
+import Engine.GeneratorRules;
+import Engine.KnowledgeBase;
+import Engine.MotorEncadenamientoHaciaAtras;
+import Utils.Formulas;
 
-import static Engine.Consts.*;
+import static Utils.Consts.*;
 
 public class Main {
 
