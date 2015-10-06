@@ -1,8 +1,7 @@
-package Utils;
+package src.main.java.Utils;
 
-import Engine.KnowledgeBase;
-
-import static Utils.Consts.*;
+import static src.main.java.Utils.Consts.*;
+import src.main.java.Engine.KnowledgeBase;
 
 public class Formulas {
 	

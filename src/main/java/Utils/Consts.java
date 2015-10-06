@@ -1,4 +1,4 @@
-package Utils;
+package src.main.java.Utils;
 
 public class Consts {
 	

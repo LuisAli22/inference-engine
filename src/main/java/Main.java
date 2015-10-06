@@ -1,16 +1,17 @@
-import Engine.GeneratorRules;
-import Engine.KnowledgeBase;
-import Engine.MotorEncadenamientoHaciaAtras;
-import Utils.Formulas;
+package src.main.java;
 
-import static Utils.Consts.*;
+import src.main.java.Engine.RuleBuilder;
+import src.main.java.Engine.KnowledgeBase;
+import src.main.java.Engine.MotorEncadenamientoHaciaAtras;
+import src.main.java.Utils.Formulas;
+import static src.main.java.Utils.Consts.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 	 
 		KnowledgeBase base = new KnowledgeBase();
-		GeneratorRules generatorRules = new GeneratorRules(base);
+		RuleBuilder generatorRules = new RuleBuilder(base);
 		generatorRules.cargarReglas();
 		
 		// hechos iniciales
@@ -28,7 +29,7 @@ public class Main {
 		
 		// Si corte ultimo 10.0 => vigaBienDimensionada: false
 		// Si corte ultimo 1.0 => vigaBienDimensionada: true
-		base.addFact(CORTEULTIMO, 10.0);	
+		base.addFact(CORTEULTIMO, 1.0);	
 		base.addFact(MOMENTOULTIMO, 1.3);
 		base.addFact(TIEMPO, TIEMPOLENTO);
 		base.addFact(COSTO, COSTOMUYCARO);
@@ -49,30 +50,7 @@ public class Main {
 		motor.addInitialHypothesis(REFUERZO);
 		motor.generateResult();
 	
-		/*
-		 * Explicacion:
-		 * 
-		 *    ****** 
-		 * Si todas las premisas que necesita una regla estan en la Base conocimiento (BC), entonces la regla
-		 * puede ser disparada, aqui aparecen dos casos: 
-		 * 1) Si los antecedentes cumplen la regla, despues que se dispare la regla se introduce 
-		 *    un nuevo hecho en la BC 
-		 * 2) Si los antecedentes No cumplen la regla despues que se dispare la regla 
-		 *    NO se introduce ningun un nuevo hecho en la BC
-		 *    
-		 *    ******
-		 * El motor de encadenamiento hacia atras necesita verificar si se cumple un objetivo o hipotesis (hecho final),
-		 * como resultado la hipotesis inicial puede ser:
-		 * "Verificada", es decir que se logro deducir un hecho, con dicho nombre, y se agrego a la BC
-		 * o puede ser "No Verificada", no se pudo deducir...
-		 * 
-		 * 
-		 * 	  *****
-		 * Las reglas se encuentran encadenadas en base a la premisa que producen, por lo que forman un arbol
-		 * El motor recorre recursivamente dicho arbol, realizando una busqueda en profundidad. 
-		 * Si hay mas de dos reglas a disparar, el motor dispara las reglas segun su orden.  
-		 * 
-		 */
+	 
 	}
 
 }

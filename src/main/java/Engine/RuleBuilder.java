@@ -1,11 +1,11 @@
-package Engine;
+package src.main.java.Engine;
 
-import static Utils.Consts.*;
+import static src.main.java.Utils.Consts.*;
 
-public class GeneratorRules {
+public class RuleBuilder {
 	private KnowledgeBase base;
 	
-	public GeneratorRules(KnowledgeBase base) {
+	public RuleBuilder(KnowledgeBase base) {
 		this.base = base;
 	}
 	
